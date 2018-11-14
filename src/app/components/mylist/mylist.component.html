@@ -1,0 +1,37 @@
+<div>
+  <div>
+    <h3>List of Vegetables</h3>
+    <table>
+      <thead>
+        <th>Sr. No.</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Actions</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let veg of veggies; index as n">
+          <td>{{n+1}}</td>
+          <td>{{ veg.name }}</td>
+          <td>{{ veg.price }}</td>
+          <td>
+            <button (click)="deleteVeg(n)">X</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div>
+    <h4>2-Way Data Binding</h4>
+    <input type="text" [(ngModel)]="message">
+    <p></p>
+    Your message is: {{ message }}
+  </div>
+  <div>
+    <h4>Add Veggie</h4>
+    <input type="text" [(ngModel)]="newVeg">
+    <p></p>
+    <input type="text" [(ngModel)]="newPrice">
+    <p></p>
+    <button (click)="addVeg()">Add</button>
+  </div>
+</div>
